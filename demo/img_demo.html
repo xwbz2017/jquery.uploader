@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+	<script type="text/javascript" src="../jquery.img-uploader.js"></script>
+</head>
+<body>
+<div>
+	<input id="file1" value="./imgs/bg.jpg">
+</div>
+<div>
+	<input id="file2" value="./imgs/bg.jpg" data-multiple="true">
+</div>
+	<script type="text/javascript">
+		$(function(){
+			$('input').xwbzImg({
+				url: 'http://127.0.0.1:81/common/file/upload_multi'
+			})
+		})
+	</script>
+</body>
+</html>
