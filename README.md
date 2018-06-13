@@ -16,11 +16,13 @@
 ```
 3. 初始化插件
 > [name=file]选中的是上面的隐藏域 \
-> 暂时可配置的就下面三项，因为目前就用到这些。(懒
+> 暂时可配置的就下面几项，因为目前就用到这些。(懒
 ```
 $('[name=file]').xwbzImg({
     url: '/xx/xx/xx', // 服务器上传地址
-    resultKey: 'url', // 服务器返回值字段名
-    'error': function(err){console.error(err)} // 自定义异常捕获
+    resultKey: 'url', // 服务器返回值字段名，只是一层，服务器返回示例：{"url":["https://xxx.jpeg"]}或者{"url":"https://xxx.jpeg"}
+    'error': function(err){console.error(err)}, // 自定义异常捕获
+    'width': '100px', // 20180613新增，图片宽度，默认100px，注意需要带上单位
+    'height': '100px', // 20180613新增，图片高度，默认100px，注意需要带上单位
 });
 ```
