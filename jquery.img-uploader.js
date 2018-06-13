@@ -149,7 +149,7 @@
             if (!urlArr.length) {
                 urlArr.push(me.defaultImg);
             }
-            var imgHtml = '<div style="height:'+me.options.height+';float:left;box-shadow: 2px 2px 2px #ccc;margin:5px;"><img class="xwbz-img-box" style="height:'+me.options.height+';width:'+me.options.width+';"><div style="height: 30px;display:none;top:-105px;position:relative;"><div class="img-btn img-del-btn" style="flex: 1;padding: 5px;text-align: center;color: white;background: red;flex: 1;">✖</div>';
+            var imgHtml = '<div style="height:'+me.options.height+';float:left;box-shadow: 2px 2px 2px #ccc;margin:5px;position: relative;"><img class="xwbz-img-box" style="height:'+me.options.height+';width:'+me.options.width+';"><div style="height: 30px;display:none;top:0;position:absolute;width: 100%;"><div class="img-btn img-del-btn" style="flex: 1;padding: 5px;text-align: center;color: white;background: red;">✖</div>';
             if (isMultiple) {
                 imgHtml += '<div class="img-btn img-edit-btn" style="flex: 1;padding: 5px;text-align: center;color: white;background: rgba(0,0,0,0.5);">✎</div>';
             }
@@ -216,10 +216,3 @@
         return new ImgUploader(this, options).init();
     }
 })(jQuery, window, document);
-
-
-
-
-
-
-
