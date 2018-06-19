@@ -24,5 +24,6 @@ $('[name=file]').xwbzImg({
     'error': function(err){console.error(err)}, // 自定义异常捕获
     'width': '100px', // 20180613新增，图片宽度，默认100px，注意需要带上单位
     'height': '100px', // 20180613新增，图片高度，默认100px，注意需要带上单位
+    'separator': ','  // 20180619新增，图片链接分割符，注意不能为空
 });
 ```
