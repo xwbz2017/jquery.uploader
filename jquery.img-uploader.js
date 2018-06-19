@@ -40,9 +40,9 @@
         var idx = $this.parent().parent().data('idx');
         var $urlBox = $this.closest('.xwbz-img-parent-box').siblings(uploader.$element.selector);
         var urls = $urlBox.val();
-        var urlArr = urls ? urls.split(me.separator) : [];
+        var urlArr = urls ? urls.split(uploader.options.separator) : [];
         urlArr.splice(idx, 1);
-        $urlBox.val(urlArr.join(me.separator));
+        $urlBox.val(urlArr.join(uploader.options.separator));
         uploader.showImgBox($urlBox, $urlBox.data('multiple'));
     };
     ImgUploader.prototype = {
@@ -103,7 +103,7 @@
                         contentType: false
                     }).success(function(res, msg, xhr){
                         var urls = res[me.options.resultKey];
-                        urls = Array.isArray(urls) ? urls.join(me.separator) : urls;
+                        urls = Array.isArray(urls) ? urls.join(me.options.separator) : urls;
                         if(isEdit) {
                             me.editImgUrl($this, urls);
                             return;
@@ -125,10 +125,10 @@
             var me = this;
             var $imgParent = $d.siblings('.xwbz-img-parent-box');
             $imgParent.children('div').remove();
-            var urlArr = $d.val() ? $d.val().split(me.separator) : [];
+            var urlArr = $d.val() ? $d.val().split(me.options.separator) : [];
 
             for(i=0;i<urlArr.length;i++) if(!urlArr[i]) urlArr.splice(i--,1);
-            $d.val(urlArr.join(me.separator));
+            $d.val(urlArr.join(me.options.separator));
 
             $d.attr('data-num', urlArr.length);
             // 是否能上传，能上传时在图片框最后会有一个上传的图片按钮
@@ -189,9 +189,9 @@
             var isMultiple = $urlBox.data('multiple');
             if(isMultiple) {
                 var urls = $urlBox.val();
-                var urlArr = urls ? urls.split(me.separator) : [];
+                var urlArr = urls ? urls.split(me.options.separator) : [];
                 urlArr.push(url);
-                $urlBox.val(urlArr.join(me.separator));
+                $urlBox.val(urlArr.join(me.options.separator));
             }else{
                 $urlBox.val(url);
             }
@@ -202,10 +202,10 @@
             var $urlBox = $file.parent().siblings(me.$element.selector);
             var idx = ~~(me.imgEditFlag.replace('idx_', ''));
             var urls = $urlBox.val();
-            var urlArr = urls ? urls.split(me.separator) : [];
+            var urlArr = urls ? urls.split(me.options.separator) : [];
             urlArr[idx] = url;
 
-            $urlBox.val(urlArr.join(me.separator));
+            $urlBox.val(urlArr.join(me.options.separator));
             var isMultiple = $urlBox.data('multiple');
             if(isMultiple){
                 $file.prop('multiple', true);
