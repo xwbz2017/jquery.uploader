@@ -8,17 +8,20 @@
 </head>
 <body>
 <div>
-	<input id="file1" value="./imgs/bg.jpg">
+	<input class="file" id="file1" value="./imgs/bg.jpg">
 </div>
 <div>
-	<input id="file2" value="./imgs/bg.jpg" data-multiple="true">
+	<input class="file" id="file2" value="./imgs/bg.jpg" data-multiple="true">
 </div>
 	<script type="text/javascript">
 		$(function(){
-			$('input').xwbzImg({
+			$('.file').xwbzImg({
 				url: 'http://127.0.0.1:81/common/file/upload_multi',
 				width: '150px'
-			})
+			});
+			setTimeout(function(){
+                $('.file').xwbzImg('destroy')
+			}, 5000)
 		})
 	</script>
 </body>
